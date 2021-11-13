@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body onload="getSubCards()" onresize="getSubCards()">
+            <div class="header"><p><span>Shuffle and Sort</span></p></div>
+            <div class="container-fluid">
+                <div class="container">
+                    <!-- Cards Section -->
+                    <div class="column-first">
+                        <div class="cards">
+                            <div id="child1" class="flex-container">
+                            </div>
+                            <div id="child2" class="flex-container">
+                            </div>
+                            <div id="child3" class="flex-container">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="column-second">
+                            <button type="button" onclick="suffle()">SHUFFLE</button>
+                            <button type="button" onclick="sort()">SORT</button>
+                    </div>
+                </div>
+                <p class="footer"><i>Shuffle and sort by Saniya Syed Qureshi</i></p>
+            </div>
+            <script src="./js/script.js"></script>
+    </body>
+</html>
