@@ -4,40 +4,33 @@
   .container-fluid {
     background-color: #EFEFEF;
   }
-  .header p{
+  .header p {
     text-align: center;
     font-size: 14px;
   }
   .container {
     width: 100%;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 80% 20%;
     border-top: 3px solid #BFBFBF;
   }
-  .column-first {
-    width: 80%;
-  }
- .flex-container {
-    display: flex;
-    flex-direction: row;
+ .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
     font-size: 80px;
     text-align: center;
     width: 90%;
     color: #FFFFFF;
     align-content: center;
   }
-  .flex-item {
+  .grid-item {
     background-color: #6F98A8;
     padding: 10px;
-    flex: 5%;
     height: 160px;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
     width: 100%;
-  }
-  .column-second {
-    width: 20%;
   }
   button {
     min-width: 65px;
@@ -78,16 +71,12 @@
             top: 10px;
             font-size: 15px;
         }
-        .flex-container {
-            flex-direction: column;
+        .grid-container {
+            grid-template-columns: 1fr;
             font-size: 18px;
             width: 100%;
         }
-        .container {
-            flex-direction: column;
-        }
         .column-first {
-            width: 80%;
             margin-top: 45px;
         }
         .column-second {
@@ -108,22 +97,23 @@
         .footer {
             margin-top: 10px;
         }
-        .flex-item {
+        .grid-item {
             margin-top: 3px;
             color: #000000;
+            height: 25px;
         }
   }
 
   @media only screen  and (min-width: 376px) and (max-width: 650px){
       button {
         width: 65px;
-        font-size: 12px;
+        font-size: 11px;
       }
   }
 
   @media only screen  and (min-width: 650px) and (max-width: 770px){
     button {
       width: 95px;
-      font-size: 12px;
+      font-size: 11px;
     }
 }
