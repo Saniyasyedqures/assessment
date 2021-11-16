@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+        <title>Cards</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
-    <body onload="getSubCards()" onresize="getSubCards()">
+    <body onload="getSubCards()" onresize="resize()">
             <div class="header"><p><span>Shuffle and Sort</span></p></div>
             <div class="container-fluid">
                 <div class="container">
                     <!-- Cards Section -->
                     <div class="column-first">
                         <div class="cards">
-                            <div id="child1" class="flex-container">
+                            <div id="child1" class="grid-container">
                             </div>
-                            <div id="child2" class="flex-container">
+                            <div id="child2" class="grid-container">
                             </div>
-                            <div id="child3" class="flex-container">
+                            <div id="child3" class="grid-container">
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-let cards = [{
+const cards = [{
         value: 1,
         color: "#6F98A8"
     },
@@ -37,44 +37,52 @@ let cards = [{
 ]
 
 // Function to append cards to div
-function setCards(cards,child) {
-    document.getElementById(child).innerHTML = cards.map(card => 
-        `<div class="flex-item" style="${setCardStyle(card.color)}">${card.value}</div>`
-    ).join('');
+function setCards(cards, child) {
+        document.getElementById(child).innerHTML = cards.map(card => 
+            `<div class="grid-item" id="${card.value}" style="${setCardStyle(card.color)}">${card.value}</div>`
+        ).join('');
 }
 
 // Function to get sub cards
 function getSubCards() {
-    let index = 0;
-    for(var i=0;i<cards.length;i++) {
-        let slicedCards = cards.slice(i,i+3);
-        i=i+2;
-        index = index + 1;
-        setCards(slicedCards,"child"+ index);
-    }
+        let index = 0;
+        for(var i=0;i<cards.length;i++) {
+            let slicedCards = cards.slice(i,i+3);
+            i=i+2;
+            index = index + 1;
+            setCards(slicedCards,"child"+ index);
+        }
 }
 
 // Function to suffle cards
 function suffle() {
-    cards = cards.sort(() => Math.random() - 0.7);
-    getSubCards()
+        cards.sort(() => Math.random() - 0.7);
+        getSubCards();
 }
 
 // Function to sort cards
 function sort() {
-    cards = cards.sort(function(a,b) {
-        return a.value - b.value
-    });
-    getSubCards()
+        cards.sort(function(a,b) {
+            return a.value - b.value;
+        });
+        getSubCards();
+}
+
+// Function to call getSubCards() on satisfying below condition not every time on resizing
+function resize() {
+        let element = document.getElementById("1");
+        if((element.style.borderLeft.length > 0 && window.innerWidth > 375) || (element.style.borderLeft.length == 0 && window.innerWidth < 375)) {
+            getSubCards();
+        }
 }
 
 // Function to set style based on number and window width
 function setCardStyle(color) {
-    if(window.innerWidth > 375){
-       return `background-color: ${color}`;
-    }
-    else {
-        let style = `background-color: #EFEFEF;border-left: 10px solid ${color}`;
-        return style;
-    }
+        if(window.innerWidth > 375) {
+            return `background-color: ${color}`;
+        }
+        else {
+            let style = `background-color: #EFEFEF;border-left: 10px solid ${color}`;
+            return style;
+        }
 }
